@@ -56,6 +56,7 @@ const Index = () => {
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl font-black text-primary-foreground leading-tight">
                 Promoção Exclusiva:
+                <span className="block mt-4 text-primary-foreground">Camisetas</span>
                 <span className="block mt-2">
                   <span className="text-primary-foreground/60 line-through text-4xl md:text-5xl">De R$89,90</span>
                   <span className="block text-accent">por R$49,90!</span>
