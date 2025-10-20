@@ -32,7 +32,7 @@ const Index = () => {
           variant="cta" 
           size="lg" 
           onClick={handleCTAClick}
-          className="text-lg px-8 py-6 h-auto rounded-full animate-glow"
+          className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 h-auto rounded-full animate-glow max-w-sm mx-auto"
         >
           🔥 ENTRAR NO GRUPO VIP
         </Button>
@@ -51,7 +51,7 @@ const Index = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 py-20 text-center animate-fade-in">
+        <div className="relative z-10 container mx-auto px-6 py-20 text-center animate-fade-in">
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl font-black text-primary-foreground leading-tight">
@@ -74,7 +74,7 @@ const Index = () => {
               variant="cta" 
               size="lg" 
               onClick={handleCTAClick}
-              className="text-xl px-12 py-8 h-auto rounded-full text-white font-black uppercase shadow-2xl hover:scale-105 transition-transform"
+              className="text-xl px-8 md:px-12 py-6 md:py-8 h-auto rounded-full text-white font-black uppercase shadow-2xl hover:scale-105 transition-transform w-full max-w-2xl mx-auto"
             >
               🚀 QUERO ENTRAR NO GRUPO VIP
             </Button>
@@ -171,12 +171,12 @@ const Index = () => {
             </Card>
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-12 px-4">
             <Button 
               variant="cta" 
               size="lg" 
               onClick={handleCTAClick}
-              className="text-xl px-12 py-8 h-auto rounded-full font-black"
+              className="text-lg md:text-xl px-8 md:px-12 py-6 md:py-8 h-auto rounded-full font-black w-full max-w-md mx-auto"
             >
               COMEÇAR AGORA
             </Button>
@@ -215,7 +215,7 @@ const Index = () => {
 
       {/* Final CTA Section */}
       <section className="py-24 bg-accent text-accent-foreground">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-6 text-center">
           <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
             <h2 className="text-4xl md:text-6xl font-black leading-tight">
               Oferta Relâmpago:
@@ -227,7 +227,7 @@ const Index = () => {
             <Button 
               onClick={handleCTAClick}
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 text-xl px-12 py-8 h-auto rounded-full font-black uppercase shadow-2xl hover:scale-105 transition-all"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg md:text-xl px-8 md:px-12 py-6 md:py-8 h-auto rounded-full font-black uppercase shadow-2xl hover:scale-105 transition-all w-full max-w-2xl mx-auto"
             >
               🎉 ENTRAR NO GRUPO AGORA
             </Button>
