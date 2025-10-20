@@ -56,7 +56,10 @@ const Index = () => {
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl font-black text-primary-foreground leading-tight">
                 Promoção Exclusiva:
-                <span className="block text-accent mt-2">Camisetas por R$49,90!</span>
+                <span className="block mt-2">
+                  <span className="text-primary-foreground/60 line-through text-4xl md:text-5xl">De R$89,90</span>
+                  <span className="block text-accent">por R$49,90!</span>
+                </span>
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-2xl mx-auto">
                 E mais: <span className="font-bold text-accent">Frete grátis</span> em compras acima de R$199
@@ -95,7 +98,10 @@ const Index = () => {
                 <DollarSign className="w-8 h-8 text-accent" />
               </div>
               <h3 className="font-bold text-lg text-card-foreground">Preço Especial</h3>
-              <p className="text-muted-foreground">Apenas <span className="text-accent font-bold text-xl">R$49,90</span> por camiseta de alta qualidade</p>
+              <p className="text-muted-foreground">
+                <span className="line-through text-sm opacity-60">De R$89,90</span>
+                {" "}por apenas <span className="text-accent font-bold text-xl">R$49,90</span>
+              </p>
             </Card>
 
             <Card className="p-6 text-center space-y-4 bg-card hover:shadow-lg transition-all duration-300 animate-slide-up [animation-delay:200ms] border-2 hover:border-accent">
@@ -155,7 +161,9 @@ const Index = () => {
                   3
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-2 text-card-foreground">Garanta suas camisetas por R$49,90</h3>
+                  <h3 className="text-2xl font-bold mb-2 text-card-foreground">
+                    Garanta suas camisetas: <span className="line-through text-muted-foreground text-xl">R$89,90</span> por <span className="text-accent">R$49,90</span>
+                  </h3>
                   <p className="text-muted-foreground text-lg">Aproveite antes que a promoção acabe!</p>
                 </div>
               </div>
