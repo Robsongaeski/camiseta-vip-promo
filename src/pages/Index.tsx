@@ -3,11 +3,9 @@ import { Card } from "@/components/ui/card";
 import { Shirt, DollarSign, Truck, Lock, CheckCircle } from "lucide-react";
 import heroImage from "@/assets/hero-tshirts.jpg";
 import { useState, useEffect } from "react";
-
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const whatsappLink = "https://chat.whatsapp.com/HjAxhm8HjVq2bxkJTlC4gS";
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
@@ -15,25 +13,13 @@ const Index = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
   const handleCTAClick = () => {
     window.open(whatsappLink, "_blank");
   };
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Fixed CTA Button */}
-      <div
-        className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
-          isScrolled ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"
-        }`}
-      >
-        <Button 
-          variant="cta" 
-          size="lg" 
-          onClick={handleCTAClick}
-          className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 h-auto rounded-full animate-glow max-w-sm mx-auto"
-        >
+      <div className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${isScrolled ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"}`}>
+        <Button variant="cta" size="lg" onClick={handleCTAClick} className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 h-auto rounded-full animate-glow max-w-sm mx-auto">
           🔥 ENTRAR NO GRUPO VIP
         </Button>
       </div>
@@ -42,11 +28,7 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background with gradient overlay */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src={heroImage} 
-            alt="Camisetas Update estilosas" 
-            className="w-full h-full object-cover"
-          />
+          <img src={heroImage} alt="Camisetas Update estilosas" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/70 to-primary" />
         </div>
 
@@ -70,14 +52,7 @@ const Index = () => {
               </p>
             </div>
 
-            <Button 
-              variant="cta" 
-              size="lg" 
-              onClick={handleCTAClick}
-              className="text-xl px-8 md:px-12 py-6 md:py-8 h-auto rounded-full text-white font-black uppercase shadow-2xl hover:scale-105 transition-transform w-full max-w-2xl mx-auto"
-            >
-              🚀 QUERO ENTRAR NO GRUPO VIP
-            </Button>
+            <Button variant="cta" size="lg" onClick={handleCTAClick} className="text-xl px-8 md:px-12 py-6 md:py-8 h-auto rounded-full text-white font-black uppercase shadow-2xl hover:scale-105 transition-transform w-full max-w-2xl mx-auto">🚀 ENTRAR NO GRUPO VIP</Button>
           </div>
         </div>
       </section>
@@ -172,12 +147,7 @@ const Index = () => {
           </div>
 
           <div className="text-center mt-12 px-4">
-            <Button 
-              variant="cta" 
-              size="lg" 
-              onClick={handleCTAClick}
-              className="text-lg md:text-xl px-8 md:px-12 py-6 md:py-8 h-auto rounded-full font-black w-full max-w-md mx-auto"
-            >
+            <Button variant="cta" size="lg" onClick={handleCTAClick} className="text-lg md:text-xl px-8 md:px-12 py-6 md:py-8 h-auto rounded-full font-black w-full max-w-md mx-auto">
               COMEÇAR AGORA
             </Button>
           </div>
@@ -224,11 +194,7 @@ const Index = () => {
             <p className="text-xl md:text-2xl font-medium">
               Não perca essa oportunidade única de garantir suas camisetas com desconto exclusivo
             </p>
-            <Button 
-              onClick={handleCTAClick}
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg md:text-xl px-8 md:px-12 py-6 md:py-8 h-auto rounded-full font-black uppercase shadow-2xl hover:scale-105 transition-all w-full max-w-2xl mx-auto"
-            >
+            <Button onClick={handleCTAClick} size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg md:text-xl px-8 md:px-12 py-6 md:py-8 h-auto rounded-full font-black uppercase shadow-2xl hover:scale-105 transition-all w-full max-w-2xl mx-auto">
               🎉 ENTRAR NO GRUPO AGORA
             </Button>
             <p className="text-sm opacity-90 pt-4">
@@ -246,8 +212,6 @@ const Index = () => {
           </p>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
