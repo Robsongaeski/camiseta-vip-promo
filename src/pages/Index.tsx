@@ -14,10 +14,6 @@ const Index = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   const handleCTAClick = () => {
-    // Track Facebook Pixel Lead event
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Lead');
-    }
     window.open(whatsappLink, "_blank");
   };
   return <div className="min-h-screen bg-background">
@@ -44,7 +40,10 @@ const Index = () => {
                 Promoção Exclusiva:
                 <span className="block mt-4 text-primary-foreground">Camisetas</span>
                 <span className="block mt-2">
-                  <span className="text-primary-foreground/60 line-through text-4xl md:text-5xl">De R$89,90</span>
+                  <span className="text-primary-foreground/60 line-through text-4xl md:text-5xl">Promoção Relâmpago:
+Camisetas
+De R$89,90
+por R$49,90!</span>
                   <span className="block text-accent">por R$49,90!</span>
                 </span>
               </h1>
