@@ -14,6 +14,10 @@ const Index = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   const handleCTAClick = () => {
+    // Track Facebook Pixel Lead event
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Lead');
+    }
     window.open(whatsappLink, "_blank");
   };
   return <div className="min-h-screen bg-background">
