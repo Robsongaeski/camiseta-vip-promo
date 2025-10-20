@@ -3,9 +3,36 @@ import { Card } from "@/components/ui/card";
 import { Shirt, DollarSign, Truck, Lock, CheckCircle } from "lucide-react";
 import heroImage from "@/assets/hero-tshirts.jpg";
 import { useState, useEffect } from "react";
+
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const whatsappLink = "https://chat.whatsapp.com/HjAxhm8HjVq2bxkJTlC4gS";
+  
+  // Countdown timer
+  useEffect(() => {
+    const promoDate = new Date('2025-10-24T00:00:00').getTime();
+    
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = promoDate - now;
+      
+      if (distance > 0) {
+        setTimeLeft({
+          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((distance % (1000 * 60)) / 1000)
+        });
+      }
+    };
+    
+    updateCountdown();
+    const timer = setInterval(updateCountdown, 1000);
+    
+    return () => clearInterval(timer);
+  }, []);
+  
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
@@ -39,6 +66,34 @@ const Index = () => {
         {/* Content */}
         <div className="relative z-10 container mx-auto px-6 py-20 text-center animate-fade-in">
           <div className="max-w-4xl mx-auto space-y-8">
+            {/* Countdown Timer */}
+            <div className="bg-accent/20 backdrop-blur-sm border-2 border-accent rounded-2xl p-6 md:p-8 mb-8">
+              <p className="text-lg md:text-xl text-primary-foreground font-bold mb-4">
+                🔥 A PROMOÇÃO COMEÇA EM:
+              </p>
+              <div className="flex justify-center gap-3 md:gap-6">
+                <div className="bg-accent/90 rounded-lg px-4 py-3 md:px-6 md:py-4 min-w-[70px] md:min-w-[90px]">
+                  <div className="text-3xl md:text-5xl font-black text-accent-foreground">{timeLeft.days}</div>
+                  <div className="text-xs md:text-sm text-accent-foreground/80 font-medium">DIAS</div>
+                </div>
+                <div className="bg-accent/90 rounded-lg px-4 py-3 md:px-6 md:py-4 min-w-[70px] md:min-w-[90px]">
+                  <div className="text-3xl md:text-5xl font-black text-accent-foreground">{timeLeft.hours}</div>
+                  <div className="text-xs md:text-sm text-accent-foreground/80 font-medium">HORAS</div>
+                </div>
+                <div className="bg-accent/90 rounded-lg px-4 py-3 md:px-6 md:py-4 min-w-[70px] md:min-w-[90px]">
+                  <div className="text-3xl md:text-5xl font-black text-accent-foreground">{timeLeft.minutes}</div>
+                  <div className="text-xs md:text-sm text-accent-foreground/80 font-medium">MIN</div>
+                </div>
+                <div className="bg-accent/90 rounded-lg px-4 py-3 md:px-6 md:py-4 min-w-[70px] md:min-w-[90px]">
+                  <div className="text-3xl md:text-5xl font-black text-accent-foreground">{timeLeft.seconds}</div>
+                  <div className="text-xs md:text-sm text-accent-foreground/80 font-medium">SEG</div>
+                </div>
+              </div>
+              <p className="text-base md:text-lg text-primary-foreground font-bold mt-4">
+                ⚠️ O aviso da liberação será SOMENTE pelo Grupo VIP!
+              </p>
+            </div>
+
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl font-black text-primary-foreground leading-tight">
                 Promoção Exclusiva:
@@ -52,7 +107,7 @@ const Index = () => {
                 E mais: <span className="font-bold text-accent">Frete grátis</span> em compras acima de R$199
               </p>
               <p className="text-lg md:text-xl text-primary-foreground/80 font-medium">
-                ⚡ Mas atenção: essa oferta só será liberada no nosso <span className="text-accent font-bold">Grupo VIP do WhatsApp!</span>
+                ⚡ Entre agora no grupo para não perder a liberação!
               </p>
             </div>
 
